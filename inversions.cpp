@@ -32,14 +32,11 @@ int main() {
   if (fin.is_open()) {
   cout << "File Opened successfully!!!. Reading data from file into array" << endl;
     while (fin >> number) {
-      A[position] = number;
-      position++;
+      A[position++] = number;
     }
   } 
   sortAndCount(A, 0, SIZE - 1);
   cout << "Number of inversions - " << count << endl;
-  cout << ((1<<31) - 1) << endl;
-  cout << A[99999] << endl;
   fin.close();
 }
 
@@ -59,24 +56,17 @@ void mergeAndCount(int A[], int s1, int e1, int s2, int e2) {
   int j = s2;
   while (i <= e1 && j <= e2) {
     if (A[i] < A[j]) {
-      temp[index] = A[i];
-      i++;
+      temp[index++] = A[i++];
     } else {
-      temp[index] = A[j];
-      j++;
+      temp[index++] = A[j++];
       count += e1 - i + 1;
     }
-    index++;
   }
   while (i <= e1) {
-    temp[index] = A[i];
-    i++;
-    index++;
+    temp[index++] = A[i++];
   }
   while (j <= e2) {
-    temp[index] = A[j];
-    j++;
-    index++;
+    temp[index++] = A[j++];
   }
   for (int i = s1; i < index; i++) {
     A[i] = temp[i];
