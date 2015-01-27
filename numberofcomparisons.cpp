@@ -28,8 +28,7 @@ int main() {
   if (fin.is_open()) {
   cout << "File Opened successfully!!!. Reading data from file into array" << endl;
     while (fin >> number) {
-      A[position] = number;
-      position++;
+      A[position++] = number;
     }
   } 
   quickSort(A, 0, SIZE - 1);
@@ -41,10 +40,9 @@ int main() {
 int partition(int *A, int start, int end) {
   int pivot = A[start];
   int p_index = start + 1;
-  for (int i = start + 1; i <= end; i++) {
+  for (int i = start + 1; i <= end; ++i) {
     if(A[i] < pivot) { 
-      swap(A[i], A[p_index]);
-      p_index++;
+      swap(A[i], A[p_index++]);
     }
   }
   swap(A[start], A[--p_index]);
@@ -57,10 +55,9 @@ int partition(int *A, int start, int end) {
   swap(A[end], A[start]);
   int pivot = A[start];
   int p_index = start + 1;
-  for (int i = start + 1; i <= end; i++) {
+  for (int i = start + 1; i <= end; ++i) {
     if(A[i] < pivot) { 
-      swap(A[i], A[p_index]);
-      p_index++;
+      swap(A[i], A[p_index++]);
     }
   }
   swap(A[start], A[--p_index]);
@@ -82,8 +79,7 @@ int partition(int *A, int start, int end) {
   int p_index = start + 1;
   for (int i = start + 1; i <= end; i++) {
     if(A[i] < pivot) { 
-      swap(A[i], A[p_index]);
-      p_index++;
+      swap(A[i], A[p_index++]);
     }
   }
   swap(A[start], A[--p_index]);
