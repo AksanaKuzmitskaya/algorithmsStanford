@@ -5,7 +5,7 @@
  * aksana.kuzmitskaya@gmail.com
  *
  *
- *O(n log n) Algorithm fo Closest Pair
+ *O(n log n) Algorithm for Closest Pair
  *
  */
  
