@@ -1,4 +1,4 @@
- /**
+ /*
  * stronglyConnectedComponents
  *
  * Aksana Kuzmitskaya
