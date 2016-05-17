@@ -28,7 +28,7 @@
 
 
 class HashTable{
-	int hashFunction( long long val ) {
+    int hashFunction( long long val ) {
         int g = val >> 16 ;
         return g % NUMBER_OF_BACKETS ;
 	}
