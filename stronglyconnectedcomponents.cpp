@@ -59,10 +59,10 @@ void Graph::DFSRev( const int i ) {
         for ( int j = int( gHelper[top].size() - 1 ) ; j >= 0 ; --j ) {
             if ( !visited[gHelper[top][j]] ) {
                 visited[gHelper[top][j]] = true ;
-		stack.push( gHelper[top][j] ) ;
+				stack.push( gHelper[top][j] ) ;
                 hasUnvisited = true ;
             } 
-	} 
+		} 
         if ( !hasUnvisited ) {
             f[top] = t ;
             ++t ;
@@ -82,10 +82,10 @@ void Graph::DFS( const int i ) {
             visited[top] = true ;
             for ( int j = int( gHelper[top].size() - 1 ) ; j >= 0 ; --j ) {
                 if ( !visited[gHelper[top][j]] ) {
-		    stack.push( gHelper[top][j] ) ;
+		    		stack.push( gHelper[top][j] ) ;
                 }
             }
-	}
+		}
     }
     insertSizeInSortedOrder( sccSize ) ; 
 }
@@ -131,10 +131,10 @@ void Graph::DFSHelper( bool onRev ) {
     for ( int i = NUM_VERTICES - 1 ; i >= 0 ; --i ) {
         if ( !visited[i] ) {
             if ( onRev )
-	        DFSRev( i ) ;
+	        	DFSRev( i ) ;
             else 
                 DFS( i ) ;
-	}
+		}
     }
     cleareVisitedFT() ;
 }
@@ -143,8 +143,8 @@ void Graph::transformG() {
     for ( int i = 0 ; i < NUM_VERTICES ; ++i ) {
         gHelper[f[i]].assign( g[i].begin() , g[i].end() ) ;
         for ( int j = 0 ; j < g[i].size() ; ++j ) {
-	    gHelper[f[i]][j] = f[g[i][j]] ;
-	}
+	    	gHelper[f[i]][j] = f[g[i][j]] ;
+		}
     }
 }
 Graph::Graph() : numEdges( 0 ) { 
@@ -156,7 +156,7 @@ Graph::Graph() : numEdges( 0 ) {
 int main() {
     std::ifstream fid( "SCC.txt" ) ;
     if ( !fid.is_open() ) {
-	std::cout <<  "Failed to open the file." << std::endl ;
+		std::cout <<  "Failed to open the file." << std::endl ;
         return 1 ;
     }
     Graph graph ;
